@@ -17,13 +17,7 @@
 (defn set-host! [new-host]
   (reset! api-host new-host))
 
-(defn get-version []
-  (or (System/getProperty "clj-airbrake.version")
-      (let [props (doto (java.util.Properties.)
-                    (.load (jio/reader (jio/resource "META-INF/maven/clj-airbrake/clj-airbrake/pom.properties"))))]
-        (.getProperty props "version"))))
-
-(def version (get-version))
+(def version "2.4.2")
 
 (defn xml-ex-response [throwable & [message-prefix]]
   (let [{:keys [trace-elems]} (parse-exception throwable)
