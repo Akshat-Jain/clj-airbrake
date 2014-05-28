@@ -53,7 +53,7 @@
     (are [expected-vars path] (= expected-vars (var-elems-at notice-xml path))
          (:cgi-data request) [:request :cgi-data]
          (:params request) [:request :params]
-         {"user-id" "23", "something-that-needs-escaping" "&lt;foo&gt; &quot;&amp;&quot;&apos; &lt;/foo&gt;"} [:request :session]) ; notice how the keywords get `name` called on them
+         {"user-id" "23", "something-that-needs-escaping" "<foo> \"&\"' </foo>"} [:request :session]) ; notice how the keywords get `name` called on them
     (testing "backtraces"
       (let [first-line (first (backtrace-lines notice-xml))]
         (is (= "core.clj" (:file first-line)))

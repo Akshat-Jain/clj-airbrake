@@ -51,7 +51,7 @@
     (when-not (empty? sub-map)
       (vec (cons sub-map-key
                  (for [[k,v] sub-map]
-                   [:var {:key (sanitize k)} (-> v map?->str sanitize)]))))))
+                   [:var {:key (name k)} (-> v map?->str name)]))))))
 
 (defn make-notice
   ([api-key environment-name project-root throwable & [request message-prefix]]
