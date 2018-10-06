@@ -105,7 +105,7 @@ Basic support for Ring is provided in the `clj-airbrake.ring` namespace: request
 
 ## License
 
-Copyright (C) 2010 LeadTune and Ben Mabey
+Copyright (C) 2010 LeadTune and Ben Mabey.
 
 Released under the MIT License: <http://www.opensource.org/licenses/mit-license.php>
 
